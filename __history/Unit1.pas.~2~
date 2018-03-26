@@ -1,0 +1,45 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ToolWin,
+  Vcl.Menus;
+
+type
+  TForm1 = class(TForm)
+    MainMenu1: TMainMenu;
+    Fichero1: TMenuItem;
+    Edicion1: TMenuItem;
+    Formato1: TMenuItem;
+    Abrir1: TMenuItem;
+    Guardar1: TMenuItem;
+    Nuevo1: TMenuItem;
+    N1: TMenuItem;
+    Cerrar1: TMenuItem;
+    Copiar1: TMenuItem;
+    Cortar1: TMenuItem;
+    Pegar1: TMenuItem;
+    Fuentes1: TMenuItem;
+    Color1: TMenuItem;
+    Fondo1: TMenuItem;
+    exto1: TMenuItem;
+    Ayuda1: TMenuItem;
+    Acercade1: TMenuItem;
+    ToolBar1: TToolBar;
+    RichEdit1: TRichEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.

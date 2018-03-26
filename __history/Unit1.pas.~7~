@@ -1,0 +1,204 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ToolWin,
+  Vcl.Menus, Vcl.ImgList, Vcl.Buttons;
+
+type
+  TForm1 = class(TForm)
+    MainMenu1: TMainMenu;
+    Fichero1: TMenuItem;
+    Edicion1: TMenuItem;
+    Formato1: TMenuItem;
+    Abrir1: TMenuItem;
+    Guardar1: TMenuItem;
+    Nuevo1: TMenuItem;
+    N1: TMenuItem;
+    Cerrar1: TMenuItem;
+    Copiar1: TMenuItem;
+    Cortar1: TMenuItem;
+    Pegar1: TMenuItem;
+    Fuentes1: TMenuItem;
+    Color1: TMenuItem;
+    Fondo1: TMenuItem;
+    exto1: TMenuItem;
+    Ayuda1: TMenuItem;
+    Acercade1: TMenuItem;
+    ToolBar1: TToolBar;
+    RichEdit1: TRichEdit;
+    ImageList1: TImageList;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    ToolButton3: TToolButton;
+    ToolButton4: TToolButton;
+    ToolButton5: TToolButton;
+    ToolButton6: TToolButton;
+    ToolButton7: TToolButton;
+    ToolButton8: TToolButton;
+    ToolButton9: TToolButton;
+    ToolButton10: TToolButton;
+    ToolButton11: TToolButton;
+    ToolButton12: TToolButton;
+    SpeedButton1: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    SpeedButton4: TSpeedButton;
+    SpeedButton5: TSpeedButton;
+    ComboBox1: TComboBox;
+    OpenDialog1: TOpenDialog;
+    SaveDialog1: TSaveDialog;
+    FontDialog1: TFontDialog;
+    ColorDialog1: TColorDialog;
+    procedure FormActivate(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure Abrir1Click(Sender: TObject);
+    procedure Fuentes1Click(Sender: TObject);
+    procedure ToolButton5Click(Sender: TObject);
+    procedure ToolButton6Click(Sender: TObject);
+    procedure ToolButton7Click(Sender: TObject);
+    procedure Guardar1Click(Sender: TObject);
+    procedure Cerrar1Click(Sender: TObject);
+    procedure Nuevo1Click(Sender: TObject);
+    procedure exto1Click(Sender: TObject);
+    procedure Fondo1Click(Sender: TObject);
+    procedure Acercade1Click(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
+    procedure ToolButton9Click(Sender: TObject);
+    procedure ToolButton10Click(Sender: TObject);
+    procedure ToolButton11Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses Unit2;
+
+procedure TForm1.Abrir1Click(Sender: TObject);
+begin
+       if opendialog1.Execute then
+             richedit1.Lines.LoadFromFile(opendialog1.FileName);
+end;
+
+procedure TForm1.Acercade1Click(Sender: TObject);
+begin
+Form2.showmodal;
+end;
+
+procedure TForm1.Cerrar1Click(Sender: TObject);
+begin
+close
+end;
+
+procedure TForm1.ComboBox1Change(Sender: TObject);
+begin
+Richedit1.SelAttributes.Name:=combobox1.Text;
+end;
+
+procedure TForm1.exto1Click(Sender: TObject);
+begin
+if colordialog1.Execute then
+   Richedit1.SelAttributes.Color:=Colordialog1.Color;
+end;
+
+procedure TForm1.Fondo1Click(Sender: TObject);
+begin
+if colordialog1.Execute then
+   Richedit1.Color:=Colordialog1.Color;
+end;
+
+procedure TForm1.FormActivate(Sender: TObject);
+begin
+combobox1.Items:=Screen.Fonts;
+end;
+
+procedure TForm1.Fuentes1Click(Sender: TObject);
+begin
+if fontdialog1.Execute then
+begin
+  Richedit1.SelAttributes.Name:=Fontdialog1.Font.Name;
+  Richedit1.SelAttributes.Size:=Fontdialog1.Font.Size;
+  Richedit1.SelAttributes.Color:=Fontdialog1.Font.Color;
+  Richedit1.SelAttributes.Style:=Fontdialog1.Font.Style;
+end;
+   // Richedit1.Font:=Fontdialog1.Font;
+end;
+
+procedure TForm1.Guardar1Click(Sender: TObject);
+begin
+if savedialog1.Execute then
+      richedit1.Lines.SaveToFile(savedialog1.FileName);
+end;
+
+procedure TForm1.Nuevo1Click(Sender: TObject);
+begin
+Richedit1.Clear;
+end;
+
+procedure TForm1.SpeedButton1Click(Sender: TObject);
+begin
+if SpeedButton1.Down then
+        Richedit1.SelAttributes.Style:=Richedit1.SelAttributes.Style+[fsbold]
+else
+       Richedit1.SelAttributes.Style:=Richedit1.SelAttributes.Style-[fsbold]
+end;
+
+procedure TForm1.SpeedButton2Click(Sender: TObject);
+begin
+if SpeedButton2.Down then
+        Richedit1.SelAttributes.Style:=Richedit1.SelAttributes.Style+[fsitalic]
+else
+       Richedit1.SelAttributes.Style:=Richedit1.SelAttributes.Style-[fsitalic]
+end;
+
+procedure TForm1.SpeedButton3Click(Sender: TObject);
+begin
+if SpeedButton3.Down then
+       Richedit1.SelAttributes.Style:=Richedit1.SelAttributes.Style+[fsunderline]
+else
+      Richedit1.SelAttributes.Style:=Richedit1.SelAttributes.Style-[fsunderline]
+end;
+
+procedure TForm1.ToolButton10Click(Sender: TObject);
+begin
+Richedit1.Alignment:= taCenter;
+end;
+
+procedure TForm1.ToolButton11Click(Sender: TObject);
+begin
+Richedit1.Alignment:= taRightJustify;
+end;
+
+procedure TForm1.ToolButton5Click(Sender: TObject);
+begin
+Richedit1.CopyToClipboard;
+end;
+
+procedure TForm1.ToolButton6Click(Sender: TObject);
+begin
+Richedit1.CutToClipboard;
+end;
+
+procedure TForm1.ToolButton7Click(Sender: TObject);
+begin
+Richedit1.PasteFromClipboard;
+end;
+
+procedure TForm1.ToolButton9Click(Sender: TObject);
+begin
+Richedit1.Alignment:= taLeftJustify;
+end;
+
+end.

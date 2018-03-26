@@ -1,0 +1,107 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Editor'
+  ClientHeight = 325
+  ClientWidth = 539
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  Menu = MainMenu1
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 539
+    Height = 29
+    Caption = 'ToolBar1'
+    TabOrder = 0
+    ExplicitLeft = 176
+    ExplicitTop = 24
+    ExplicitWidth = 150
+  end
+  object RichEdit1: TRichEdit
+    Left = 0
+    Top = 29
+    Width = 539
+    Height = 296
+    Align = alClient
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    Lines.Strings = (
+      '')
+    ParentFont = False
+    TabOrder = 1
+    Zoom = 100
+    ExplicitLeft = 208
+    ExplicitTop = 112
+    ExplicitWidth = 185
+    ExplicitHeight = 89
+  end
+  object MainMenu1: TMainMenu
+    Left = 40
+    Top = 56
+    object Fichero1: TMenuItem
+      Caption = 'Fichero'
+      object Nuevo1: TMenuItem
+        Caption = 'Nuevo'
+        ShortCut = 16462
+      end
+      object Abrir1: TMenuItem
+        Caption = 'Abrir'
+        ShortCut = 16449
+      end
+      object Guardar1: TMenuItem
+        Caption = 'Guardar'
+        ShortCut = 16455
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object Cerrar1: TMenuItem
+        Caption = 'Cerrar'
+      end
+    end
+    object Edicion1: TMenuItem
+      Caption = 'Edicion'
+      object Copiar1: TMenuItem
+        Caption = 'Copiar'
+      end
+      object Cortar1: TMenuItem
+        Caption = 'Cortar'
+      end
+      object Pegar1: TMenuItem
+        Caption = 'Pegar'
+      end
+    end
+    object Formato1: TMenuItem
+      Caption = 'Formato'
+      object Fuentes1: TMenuItem
+        Caption = 'Fuentes'
+      end
+      object Color1: TMenuItem
+        Caption = 'Color'
+        object Fondo1: TMenuItem
+          Caption = 'Fondo'
+        end
+        object exto1: TMenuItem
+          Caption = 'Texto'
+        end
+      end
+    end
+    object Ayuda1: TMenuItem
+      Caption = 'Ayuda'
+      object Acercade1: TMenuItem
+        Caption = 'A cerca de'
+      end
+    end
+  end
+end
